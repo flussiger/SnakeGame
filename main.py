@@ -1,9 +1,20 @@
 import pyray as rl
 import random
+import sys
+import os
 
 rl.init_window(600, 630, "Snake")
 
-icon = rl.load_image("assets/snake_icon.png")
+# Get the correct path for assets when running as exe or script
+def resource_path(relative_path):
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+    return os.path.join(base_path, relative_path)
+
+icon = rl.load_image(resource_path("assets/snake_icon.png"))
 
 rl.image_format(icon, rl.PIXELFORMAT_UNCOMPRESSED_R8G8B8A8)
 
