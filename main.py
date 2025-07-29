@@ -3,7 +3,7 @@ import random
 
 rl.init_window(600, 630, "Snake")
 
-icon = rl.load_image("assets/testpic.png")
+icon = rl.load_image("assets/snake_icon.png")
 
 rl.image_format(icon, rl.PIXELFORMAT_UNCOMPRESSED_R8G8B8A8)
 
